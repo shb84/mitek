@@ -38,14 +38,43 @@ C. Test response time will be evaluated
 ``` 
 
 --- 
-# Installation 
+### User Instructions  
+
+1. Clone the repo in some desired location: 
 
 ```commandline
 git clone git@github.com:shb84/mitek.git
 ```
 
+2. Open MATLAB and navigate to `path/to/mitek/scripts` 
+3. Run `main.m` from the Matlab commandline 
+4. Edit user inputs as needed: 
+
+```commandline
+%% --- USER INPUTS ---
+DATA_FILE = '../data/Electric_Production.csv'; % https://www.kaggle.com/datasets/shenba/time-series-datasets
+CONFIG_FILE = 'Config.csv'; % % Change Value colum in file as needed
+```
+
+> Note: There are three sample datasets in `mitek/data` to choose from. All output PNG plots saved locally.
+
+---
+### Explanation Of Results
+
+The sample datasets were all taken from Kaggle and are plotted below. Hyperlinks are provided in the titles. The time
+series is shown as a solid black line, the mean value line as a dashed red line, and a reference linear trend line is 
+shown as a blue dashed line. There is nothing particularly noteworthy about these examples; they are just test data.  
+
+<div align="center">
+
+|   Example #1: [Electric Production](https://www.kaggle.com/datasets/shenba/time-series-datasets)    |  Example #2: [Month Value](https://www.kaggle.com/datasets/podsyp/time-series-starter-dataset)   | Example #3: [POP](https://www.kaggle.com/datasets/census/population-time-series-data)  |
+|:------------------------------------:|:------------------------------:|:--------------------:|
+| ![](scripts/Electric_Production.png) | ![](scripts/Month_Value_1.png) | ![](scripts/POP.png) |
+
+</div>
+
 --- 
-# License
+### License
 Distributed under the terms of the MIT License.
 
 

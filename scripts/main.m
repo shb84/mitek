@@ -3,8 +3,8 @@ clear; close all; clc;
 %% --- USER INPUTS ---
 DATA_FILE = '../data/Electric_Production.csv'; % https://www.kaggle.com/datasets/shenba/time-series-datasets
 % DATA_FILE = '../data/Month_Value_1.csv'; % https://www.kaggle.com/datasets/podsyp/time-series-starter-dataset
-% DATA_FILE = '../data/POP.csv';  % https://www.kaggle.com/datasets/census/population-time-series-data
-CONFIG_FILE = 'Config.csv';
+% DATA_FILE = '../data/POP.csv'; % https://www.kaggle.com/datasets/census/population-time-series-data
+CONFIG_FILE = 'Config.csv'; % Change Value colum in file as needed
 
 %% --- MAIN ---
 [show_mean, show_fit, x_label, y_label] = get_config(CONFIG_FILE);
@@ -98,8 +98,9 @@ function make_plot(filename, show_mean, show_fit, x_label, y_label)
 
     legend(items,"Location","best") 
 
-    tokens = strsplit(filename, '.');
-    root = tokens{1};
+    tokens = strsplit(filename, '/');  % split: some/path/to/file.csv
+    tokens = strsplit(tokens{end}, '.'); % split: file.csv
+    root = strcat(tokens{end-1});
     saveas(fig,strcat(root, '.', 'png'))
 end
 
