@@ -1,0 +1,5 @@
+Key,Value,Comment
+show_mean,1,Mean value line show or not
+show_fit,1,Linear data fit line show or not
+xlabel,TIME,X-axis label
+ylabel,RESPONSE,X-axis label
